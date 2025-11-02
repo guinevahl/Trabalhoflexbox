@@ -4,65 +4,238 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog - Sport Club Internacional</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Blog não-oficial do Sport Club Internacional — notícias, análises e painel de fotos do colorado.">
+  <meta name="keywords" content="Sport Club Internacional, Inter, futebol, notícias, torcida, fotos">
+  <meta name="author" content="Ilgner Vahl">
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:site_name" content="Blog - Sport Club Internacional">
+  <meta property="og:title" content="Blog do Sport Club Internacional">
+  <meta property="og:description" content="Notícias, análises e painel de fotos do Sport Club Internacional">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://SEU_USUARIO.github.io/SEU_REPOSITORIO/">
+  <meta property="og:image" content="https://SEU_USUARIO.github.io/SEU_REPOSITORIO/images/og-image.webp">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog do Sport Club Internacional">
+  <meta name="twitter:description" content="Notícias, análises e painel de fotos do Sport Club Internacional">
+  <meta name="twitter:image" content="https://SEU_USUARIO.github.io/SEU_REPOSITORIO/images/og-image.webp">
+
+  <!-- Preconnect / performance hints (opcional se usar CDN de fontes/imagens) -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="css/estilo.css">
+
 </head>
 <body id="top">
   <header class="site-header">
-    <div class="container">
-      <div class="brand">
-        <img src="images/logo.png" alt="Logo Sport Club Internacional" class="logo">
-        <h1>Blog do Sport Club Internacional</h1>
+    <div class="container header-inner">
+      <div class="brand" itemscope itemtype="http://schema.org/Organization">
+        <img src="images/logo.png" alt="Logo Sport Club Internacional" class="logo" width="60" height="60">
+        <h1 itemprop="name">Blog do Sport Club Internacional</h1>
       </div>
-      <nav class="main-nav" aria-label="Menu principal">
+
+  <nav class="main-nav" aria-label="Menu principal">
         <a href="#home">Início</a>
         <a href="#galeria">Notícias</a>
         <a href="#sobre">Sobre</a>
+        <a href="#cadastro">Cadastro</a>
+        <a href="#painel">Painel de Fotos</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
+    <!-- HERO / HOME -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
-        <h2 class="hero-title">Paixão que une gerações</h2>
-        <figure class="hero-figure">
-          <img src="images/banner.jpg" alt="Torcida do Internacional" class="hero-img">
-          <figcaption>Rei Pelé com o manto colorado.</figcaption>
+        <h2 id="hero-title" class="hero-title">Paixão que une gerações</h2>
+
+        <!-- picture otimizada (small / medium / large) -->
+        <figure class="hero-figure" aria-labelledby="hero-caption">
+          <picture>
+            <source srcset="images/banner.jpg" media="(min-width:1200px)">
+            <source srcset="images/banner2.jpg" media="(min-width:600px)">
+            <source srcset="images/banner3.jpg" media="(max-width:599px)">
+            <img src="images/banner2.jpg" alt="Torcida do Internacional lotando o estádio" class="hero-img" width="1600" height="600" loading="eager">
+          </picture>
+          <figcaption id="hero-caption">Momentos históricos do Sport Club Internacional.</figcaption>
         </figure>
+
         <div class="hero-content">
           <p>Bem-vindo ao blog não-oficial do Sport Club Internacional — notícias, análises e histórias sobre o colorado.</p>
           <p>Conteúdo feito para torcedores apaixonados.</p>
         </div>
-        <div class="mini-figures">
-          <figure><img src="images/photo1.jpg" alt="Jogador comemorando"><figcaption>Comemoração histórica.</figcaption></figure>
-          <figure><img src="images/photo2.jpg" alt="Torcida com bandeiras"><figcaption>A festa da torcida.</figcaption></figure>
+
+        <div class="mini-figures" aria-hidden="false">
+          <figure><img src="images/photo1.jpg" alt="Jogador comemorando" loading="lazy"><figcaption>Comemoração histórica.</figcaption></figure>
+          <figure><img src="images/photo2.jpg" alt="Torcida com bandeiras" loading="lazy"><figcaption>A festa da torcida.</figcaption></figure>
         </div>
+
         <a class="back-top" href="#top">Voltar para o topo</a>
       </div>
     </section>
 
-    <section id="galeria" class="gallery">
+    <!-- GALERIA / NEWS -->
+    <section id="galeria" class="gallery" aria-labelledby="galeria-title">
       <div class="container">
-        <h2>Notícias em destaque</h2>
+        <h2 id="galeria-title">Notícias em destaque</h2>
         <p class="lead">Seleção das principais matérias sobre o Inter.</p>
-        <div class="cards">
-          <article class="card"><img src="images/card1.jpg"><h3>Vitória do fim de semana</h3><p>Resumo do jogo.</p></article>
-          <article class="card"><img src="images/card2.jpg"><h3>Entrevista com o treinador</h3><p>Preparação para o jogo.</p></article>
-          <article class="card"><img src="images/card3.jpg"><h3>Categoria de base</h3><p>Jovens promissores.</p></article>
-          <article class="card"><img src="images/card4.jpg"><h3>Pré-jogo</h3><p>Análise das escalações.</p></article>
-          <article class="card"><img src="images/card5.jpg"><h3>História do clube</h3><p>Memórias inesquecíveis.</p></article>
-          <article class="card"><img src="images/card6.jpg"><h3>Agenda</h3><p>Próximos jogos.</p></article>
+        <div class="cards" role="list">
+          <article class="card" aria-labelledby="card1-title">
+            <img src="images/card1.jpg" alt="" aria-hidden="true" loading="lazy">
+            <h3 id="card1-title">Vitória do fim de semana</h3>
+            <p>Resumo do jogo.</p>
+          </article>
+
+          <article class="card" aria-labelledby="card2-title">
+            <img src="images/card2.jpg" alt="" aria-hidden="true" loading="lazy">
+            <h3 id="card2-title">Entrevista com o treinador</h3>
+            <p>Preparação para o jogo.</p>
+          </article>
+
+          <article class="card" aria-labelledby="card3-title">
+            <img src="images/card3.jpg" alt="" aria-hidden="true" loading="lazy">
+            <h3 id="card3-title">Categoria de base</h3>
+            <p>Jovens promissores.</p>
+          </article>
+
+          <article class="card" aria-labelledby="card4-title">
+            <img src="images/card4.jpg" alt="" aria-hidden="true" loading="lazy">
+            <h3 id="card4-title">Pré-jogo</h3>
+            <p>Análise das escalações.</p>
+          </article>
+
+          <article class="card" aria-labelledby="card5-title">
+            <img src="images/card5.jpg" alt="" aria-hidden="true" loading="lazy">
+            <h3 id="card5-title">História do clube</h3>
+            <p>Memórias inesquecíveis.</p>
+          </article>
+
+          <article class="card" aria-labelledby="card6-title">
+            <img src="images/card6.jpg" alt="" aria-hidden="true" loading="lazy">
+            <h3 id="card6-title">Agenda</h3>
+            <p>Próximos jogos.</p>
+          </article>
         </div>
         <a class="back-top" href="#top">Voltar para o topo</a>
       </div>
     </section>
 
-    <section id="sobre" class="info"><div class="container"><h2>Sobre</h2><p>Esse site é uma homenagem ao Sport Club Internacional, o maior time do mundo!</p></div></section>
-    <section id="contato" class="info"><div class="container"><h2>Contato</h2><p>Email:coloradotrabalhodedesign@colorado.com</p></div></section>
+    <!-- SOBRE -->
+    <section id="sobre" class="info" aria-labelledby="sobre-title">
+      <div class="container">
+        <h2 id="sobre-title">Sobre</h2>
+        <p>Esse site é uma homenagem ao Sport Club Internacional, o maior time do mundo!</p>
+      </div>
+    </section>
+
+    <!-- NOVA SESSÃO 1: CADASTRO (form + figura grande lado a lado em telas grandes) -->
+    <section id="cadastro" class="cadastro" aria-labelledby="cadastro-title">
+      <div class="container cadastro-grid">
+        <div class="cadastro-media" aria-hidden="false">
+          <!-- picture otimizada (requisito do trabalho) -->
+          <picture>
+            <source srcset="images/cadastro.jpg" media="(min-width:1200px)" type="image/webp">
+            <source srcset="images/cadastro.jpg" media="(min-width:600px)" type="image/webp">
+            <source srcset="images/cadastro.jpg" media="(max-width:599px)" type="image/webp">
+            <img src="images/cadastro.jpg" alt="Imagem grande relacionada ao formulário" width="1200" height="700" loading="lazy">
+          </picture>
+        </div>
+
+        <div class="cadastro-form" aria-labelledby="cadastro-title">
+          <h2 id="cadastro-title">Cadastro de Torcedor</h2>
+
+          <form action="#" method="post" class="form-grid" novalidate>
+            <fieldset>
+              <legend>Dados pessoais</legend>
+
+              <label for="nome">Nome completo</label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="seu@exemplo.com" required>
+
+              <label for="nascimento">Data de nascimento</label>
+              <input id="nascimento" name="nascimento" type="date" required>
+
+              <label for="numero">Número da camisa</label>
+              <input id="numero" name="numero" type="number" min="0" max="99" placeholder="10">
+
+              <label for="categoria">Categoria</label>
+              <select id="categoria" name="categoria" required>
+                <option value="">Selecione</option>
+                <option value="torcedor">Torcedor</option>
+                <option value="associado">Associado</option>
+                <option value="socio-torcedor">Sócio-torcedor</option>
+              </select>
+            </fieldset>
+
+            <fieldset>
+              <legend>Preferências</legend>
+
+              <label for="newsletter">Quero receber newsletter</label>
+              <input id="newsletter" name="newsletter" type="checkbox" value="sim" aria-describedby="newsletter-help">
+              <small id="newsletter-help">Receba notícias e promoções por email.</small>
+
+              <label>Posição favorita</label>
+              <div class="radios">
+                <label><input type="radio" name="posicao" value="atacante"> Atacante</label>
+                <label><input type="radio" name="posicao" value="meio"> Meio</label>
+                <label><input type="radio" name="posicao" value="defesa"> Defesa</label>
+              </div>
+
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva uma mensagem..."></textarea>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit">Enviar</button>
+              <button type="reset" class="muted">Limpar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOVA SESSÃO 2: PAINEL DE FOTOS (grid com background-image) -->
+    <section id="painel" class="photo-panel-section" aria-labelledby="painel-title">
+      <div class="container">
+        <h2 id="painel-title">Painel de Fotos</h2>
+        <p class="lead">Galeria otimizada com diferentes proporções — usa background-image e cover.</p>
+
+        <div class="photo-panel" role="list" aria-label="Painel de fotos">
+          <!-- Cada item usa background-image para controlar crop/cover -->
+          <div class="panel-item item-1" role="listitem" aria-label="Foto 1" tabindex="0"></div>
+          <div class="panel-item item-2" role="listitem" aria-label="Foto 2" tabindex="0"></div>
+          <div class="panel-item item-3" role="listitem" aria-label="Foto 3" tabindex="0"></div>
+          <div class="panel-item item-4" role="listitem" aria-label="Foto 4" tabindex="0"></div>
+          <div class="panel-item item-5" role="listitem" aria-label="Foto 5" tabindex="0"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="info" aria-labelledby="contato-title">
+      <div class="container">
+        <h2 id="contato-title">Contato</h2>
+        <p>Email: <a href="mailto:coloradotrabalhodedesign@colorado.com">coloradotrabalhodedesign@colorado.com</a></p>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="site-footer"><div class="container"><p>&copy; Todos os direitos reservados a Ilgner Vahl</p></div></footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Todos os direitos reservados a Ilgner Vahl</p>
+      <!-- Social card image for google preview (small) -->
+      <img src="images/logo.png" alt="" aria-hidden="true" width="1" height="1" style="position:absolute;left:-9999px;">
+    </div>
+  </footer>
 </body>
 </html>
